@@ -30,12 +30,16 @@ function mostrarPokemons(pokemons) {
         var pokeCard = document.createElement("div");
         pokeCard.classList.add("pokeCard");
 
+        // Extraindo o ID do Pokémon da URL
+        var pokemonUrl = pokemons[i].url;
+        var pokemonId = pokemonUrl.split("/")[pokemonUrl.split("/").length - 2];
+
         // Criar elementos para imagem e nome do Pokémon
         var img = document.createElement("img");
-        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i + 1}.png`;
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
 
         var id = document.createElement("span");
-        id.textContent = `ID: ${i + 1}`;
+        id.textContent = `ID: ${pokemonId}`;
 
         var name = document.createElement("span");
         name.textContent = pokemons[i].name;
