@@ -10,8 +10,6 @@ async function capturarPokemons() {
     var resposta = await fetch("https://pokeapi.co/api/v2/pokemon?limit=" + qtPokemons);
     var dados = await resposta.json();
 
-    // Exibindo no console o nome do sétimo Pokémon apenas para teste
-    console.log(dados.results[6].name);
     todosPokemons = dados.results;
 
     // Chamando função para exibir os Pokémons na página
@@ -56,11 +54,16 @@ function mostrarPokemons(pokemons) {
 
 /**
  * Função para filtrar os Pokémons com base na entrada do usuário.
+ * Permite a busca tanto pelo nome quanto pelo ID.
  */
 function filtrarPokemons() {
     var input = document.querySelector("header input");
     var filtro = input.value.toLowerCase();
-    var pokemonsFiltrados = todosPokemons.filter(pokemon => pokemon.name.toLowerCase().includes(filtro));
+    var pokemonsFiltrados = todosPokemons.filter(pokemon => {
+        var pokemonUrl = pokemon.url;
+        var pokemonId = pokemonUrl.split("/")[pokemonUrl.split("/").length - 2];
+        return pokemon.name.toLowerCase().includes(filtro) || pokemonId.includes(filtro);
+    });
     mostrarPokemons(pokemonsFiltrados);
 }
 
