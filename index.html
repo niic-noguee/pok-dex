@@ -11,14 +11,23 @@
             Pokédex
             <input type="text" placeholder="Buscar pokémon"/>
         </header>
-        <script src="src/js/script.js"></script>
         <div class="pokeContainer">
-        <!-- Cards dos Pokémons serão inseridos aqui -->
-            <div class="pokeCard">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/254.png"/>
-                <span>id</span>
-                <span>Nome Pokémon</span> 
+            <!-- Cards dos Pokémons serão inseridos aqui -->
+        </div>
+
+        <!-- Modal para mostrar os detalhes do Pokémon -->
+        <div class="modal" id="pokeModal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modal-name">Nome do Pokémon</h2>
+                <img id="modal-img" src="" alt="Imagem do Pokémon"/>
+                <p><strong>ID:</strong> <span id="modal-id"></span></p>
+                <p><strong>Altura:</strong> <span id="modal-height"></span> m</p>
+                <p><strong>Peso:</strong> <span id="modal-weight"></span> kg</p>
+                <p><strong>Tipo:</strong> <span id="modal-types"></span></p>
             </div>
         </div>
+
+        <script src="src/js/script.js"></script>
     </body>
 </html>
