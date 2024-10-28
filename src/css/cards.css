@@ -1,0 +1,39 @@
+.pokeContainer {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+   gap: 15px;
+   justify-content: center;
+   margin: 20px;
+}
+
+.pokeCard {
+   background-color: white;
+   border-radius: 10px;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   box-shadow: 0 0 4px rgba(7, 7, 7, 0.5);
+   cursor: pointer;
+   transition: transform 0.2s;
+}
+
+.pokeCard:hover {
+   transform: scale(1.05);
+}
+
+#carregarMaisBtn {
+   display: block;
+   margin: 20px auto;
+   padding: 10px 20px;
+   background-color: #007BFF;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-size: 1em;
+   cursor: pointer;
+}
+
+#carregarMaisBtn:hover {
+   background-color: #0056b3;
+}
