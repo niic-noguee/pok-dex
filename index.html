@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pokédex</title>
-        <link rel="stylesheet" href="src/css/style.css"/>
-    </head>
-    <body>
-        <header>
-            Pokédex
-            <input type="text" placeholder="Buscar pokémon"/>
-        </header>
-        <div class="pokeContainer">
-            <!-- Cards dos Pokémons serão inseridos aqui -->
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="src/css/style.css"/>
+</head>
+<body>
+    <header>
+        <h1>Pokédex</h1>
+        <input type="text" placeholder="Buscar pokémon"/>
+    </header>
+    
+    <div class="pokeContainer">
+        <!-- Cards dos Pokémons serão inseridos aqui -->
+    </div>
 
-        <!-- Modal para mostrar os detalhes do Pokémon -->
-        <div class="modal" id="pokeModal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-                <h2 id="modal-name">Nome do Pokémon</h2>
-                <img id="modal-img" src="" alt="Imagem do Pokémon"/>
-                <p><strong>ID:</strong> <span id="modal-id"></span></p>
-                <p><strong>Altura:</strong> <span id="modal-height"></span> m</p>
-                <p><strong>Peso:</strong> <span id="modal-weight"></span> kg</p>
-                <p><strong>Tipo:</strong> <span id="modal-types"></span></p>
-            </div>
-        </div>
+    <button id="carregarMaisBtn">Carregar Mais Pokémons</button>
 
-        <script src="src/js/script.js"></script>
-    </body>
+    <!-- Modal -->
+    <div id="pokeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modalImg" src="" alt="Pokémon"/>
+            <h2 id="modalName"></h2>
+            <p id="modalId"></p>
+            <p id="modalType"></p>
+            <p id="modalAbilities"></p>
+            <p id="modalWeight"></p>
+            <p id="modalHeight"></p>
+            <p id="modalAttack"></p>
+            <p id="modalDefense"></p>
+            <p id="modalHP"></p>
+            <p id="modalSpeed"></p>
+            <h3>Evoluções:</h3>
+            <div id="modalEvolutions" class="evolucaoContainer"></div>
+        </div>
+    </div>
+
+    <script src="src/js/script.js"></script>
+</body>
 </html>
