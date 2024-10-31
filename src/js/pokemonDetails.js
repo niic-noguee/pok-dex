@@ -30,7 +30,7 @@ async function carregarDetalhesPokemon(id) {
         await exibirEvolucoes(pokemonId, evolucoesContainer);
         
     } catch (error) {
-        document.querySelector(".pokemon-details").textContent = "Pokémon não encontrado.";
+        document.querySelector(".pokemon-info").textContent = "Pokémon não encontrado.";
         console.error("Erro ao carregar os detalhes do Pokémon:", error);
     }
 }
@@ -47,14 +47,17 @@ async function exibirEvolucoes(pokemonId, container) {
         const evolutionName = currentEvolution.species.name;
         const evolutionId = currentEvolution.species.url.split("/").slice(-2)[0];
 
-        const evolutionDiv = document.createElement("div");
-        evolutionDiv.classList.add("evolution");
-        evolutionDiv.innerHTML = `
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolutionId}.png" />
+        // Criar um link para cada evolução
+        const evolutionLink = document.createElement("a");
+        evolutionLink.href = `pokemon-details.html?id=${evolutionId}`;
+        evolutionLink.classList.add("evolution");
+
+        evolutionLink.innerHTML = `
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${evolutionId}.png" alt="${evolutionName}" />
             <span>${evolutionName.charAt(0).toUpperCase() + evolutionName.slice(1)}</span>
         `;
 
-        container.appendChild(evolutionDiv);
+        container.appendChild(evolutionLink);
         currentEvolution = currentEvolution.evolves_to[0];
     } while (currentEvolution);
 }
