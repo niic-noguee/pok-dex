@@ -5,9 +5,35 @@ header {
    font-size: 2em;
 }
 
-header input {
+.search-bar {
+   display: flex;
+   align-items: center;
+   justify-content: center;
    margin-top: 10px;
-   padding: 5px;
-   width: 80%;
-   font-size: 1em;
+}
+
+.search-bar input {
+   padding: 8px 12px;
+   width: 100%;
+   max-width: 490px;
+   font-size: 0.5em;
+   border: 1px solid #ccc;
+   border-radius: 5px 0 0 5px; /* Cantos arredondados para o lado esquerdo */
+   outline: none;
+}
+
+.search-bar button {
+   padding: 8px 12px;
+   font-size: 0.5em;
+   border: 1px solid #ccc;
+   border-left: none;
+   background-color: #007BFF;
+   color: white;
+   border-radius: 0 5px 5px 0; /* Cantos arredondados para o lado direito */
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+   background-color: #0056b3;
 }

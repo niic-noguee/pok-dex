@@ -2,47 +2,31 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Pokédex</title>
 
-    <! -- Importando o CSS --> 
     <link rel="stylesheet" href="src/css/header.css"/>
-    <link rel="stylesheet" href="src/css/pokemonCard.css"/>
-    <link rel="stylesheet" href="src/css/modal.css"/>
+    <link rel="stylesheet" href="src/css/cards.css"/>
     <link rel="stylesheet" href="src/css/style.css"/>
 </head>
 <body>
     <header>
-        <h1>Pokédex</h1>
-        <input type="text" placeholder="Buscar pokémon"/>
+        <h1 class="page-title">Pokédex</h1>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar pokémon"/>
+            <button id="searchButton">
+                🔍
+            </button>
+        </div>
     </header>
     
     <div class="pokeContainer">
-        <!-- Cards dos Pokémons serão inseridos aqui -->
+        <!-- Cards dos Pokémons são inseridos aqui -->
     </div>
 
-    <button id="carregarMaisBtn">Carregar Mais Pokémons</button>
-
-    <!-- Modal -->
-    <div id="pokeModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <img id="modalImg" src="" alt="Pokémon"/>
-            <h2 id="modalName"></h2>
-            <p id="modalId"></p>
-            <p id="modalType"></p>
-            <p id="modalAbilities"></p>
-            <p id="modalWeight"></p>
-            <p id="modalHeight"></p>
-            <p id="modalAttack"></p>
-            <p id="modalDefense"></p>
-            <p id="modalHP"></p>
-            <p id="modalSpeed"></p>
-            <h3>Evoluções:</h3>
-            <div id="modalEvolutions" class="evolucaoContainer"></div>
-        </div>
-    </div>
+    <button id="carregarMaisBtn">Carregar mais Pokémon</button>
 
     <script type="module" src="src/js/script.js"></script>
 </body>

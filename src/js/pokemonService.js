@@ -1,5 +1,3 @@
-import { abrirModal } from './modal.js';
-
 export let todosPokemons = [];
 
 /**
@@ -36,7 +34,11 @@ export function mostrarPokemons(offset, limit, filtro = '') {
             <span>${pokemon.name}</span>
         `;
         
-        card.addEventListener("click", () => abrirModal(pokemonId, pokemon.name));
+        // Redireciona ao clicar no card
+        card.addEventListener("click", () => {
+            window.location.href = `pokemon-details.html?id=${pokemonId}`;
+        });
+
         container.appendChild(card);
     });
 }
